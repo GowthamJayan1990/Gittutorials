@@ -1,6 +1,4 @@
-## Test
-
-from flask import Flask
+from flask import Flask, render_template
 
 '''
 Creates instance of Flask class, acting as  WSGI (Web Server Gateway Interface) application
@@ -10,11 +8,11 @@ app=Flask(__name__)
 
 @app.route("/")
 def welcome():
-    return "Welcome to this neww Flask course. This is in debug mode"
+    return "<html><H1>Welcome to Flask</H1></html>"
 
 @app.route("/index")
 def index():
-    return "Welcome to the index page"
+    return render_template('index.html')
 
 
 #Entry point of .py file
